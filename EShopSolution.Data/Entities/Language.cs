@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EShopSolution.Data.Entities
 {
-    public class Language : DomainEntity<int>
+    public class Language : DomainEntity<string>
     {
         public string Name { get; set; }
         public bool IsDefault { get; set; }
