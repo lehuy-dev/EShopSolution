@@ -13,7 +13,7 @@ namespace EShopSolution.Data.Entities
         public string Name { get; set; }
         public string Description { get; set; }
         public string Details { get; set; }
-        public int LanguageId { get; set; }
+        public string LanguageId { get; set; }
         public Language Language { get; set; }
         public int ProductId { get; set; }
         public Product Product { get; set; }
