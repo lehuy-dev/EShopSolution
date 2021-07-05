@@ -1,7 +1,14 @@
+using AutoMapper;
+using EShopSolution.Application.Catalog.Categories;
+using EShopSolution.Application.Catalog.Products;
+using EShopSolution.Application.Common;
+using EShopSolution.Data.EF;
+using EShopSolution.Utilities.Mapping;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -26,6 +33,27 @@ namespace EShopSolution.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //injection dbContext
+            services.AddDbContext<EShopDbContext>(options => {
+                options.UseSqlServer(Configuration.GetConnectionString("EShopSolution"));
+            });
+
+            //config automapper
+            //c1
+            var mappingConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new MappingProfile());
+            });
+            mappingConfig.AssertConfigurationIsValid();
+            IMapper mapper = mappingConfig.CreateMapper();
+            services.AddSingleton(mapper);
+            //c2
+            //services.AddAutoMapper(typeof(Startup));
+
+            //injection service
+            services.AddTransient<ICategoryService, CategoryService>();
+            services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<IStorageService, FileStorageService>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
