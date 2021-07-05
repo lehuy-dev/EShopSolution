@@ -1,0 +1,17 @@
+﻿using EShopSolution.Data.Domain;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace EShopSolution.Data.Entities
+{
+    public class Language : DomainEntity<string>
+    {
+        public string Name { get; set; }
+        public bool IsDefault { get; set; }
+        public List<ProductTranslation> ProductTranslations { get; set; }
+        public List<CategoryTranslation> CategoryTranslations { get; set; }
+    }
+}
