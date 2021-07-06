@@ -11,3 +11,10 @@ https://docs.microsoft.com/en-us/ef/core/dbcontext-configuration/
 Learn Identity 
 https://www.tektutorialshub.com/asp-net-core/authentication-in-asp-net-core/
 https://eddieabbondanz.io/post/aspnet/claims-based-authentication-claims-identities-principals/
+B2- Create Application 
+Knowledge
+Learn AutoMapper
+Learn Linq
+Learn Router
+Learn ActionResult
+https://tedu.com.vn/lap-trinh-aspnet-core/action-result-trong-aspnet-core-237.html
