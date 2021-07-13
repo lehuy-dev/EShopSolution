@@ -2,6 +2,7 @@
 using EShopSolution.ViewModels.Catalog.ProductImages;
 using EShopSolution.ViewModels.Catalog.Products;
 using EShopSolution.ViewModels.Common;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace EShopSolution.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ProductController : ControllerBase
     {
         private IProductService _productService;
