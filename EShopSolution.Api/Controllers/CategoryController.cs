@@ -1,6 +1,7 @@
 ﻿using EShopSolution.Application.Catalog.Categories;
 using EShopSolution.ViewModels.Catalog.Categories;
 using EShopSolution.ViewModels.Common;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,7 @@ namespace EShopSolution.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class CategoryController : ControllerBase
     {
         private ICategoryService _categoryService;
