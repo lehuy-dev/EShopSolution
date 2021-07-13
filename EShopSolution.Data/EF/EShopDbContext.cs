@@ -48,6 +48,7 @@ namespace EShopSolution.Data.EF
         public DbSet<ProductImage> ProductImages { get; set; }
 
         public DbSet<Slide> Slides { get; set; }
+        public DbSet<RefreshToken> RefreshTokens { get; set; }
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //{
         //    if(!optionsBuilder.IsConfigured)
