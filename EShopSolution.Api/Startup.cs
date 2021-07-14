@@ -7,6 +7,8 @@ using EShopSolution.Data.EF;
 using EShopSolution.Data.Entities;
 using EShopSolution.Utilities.Mapping;
 using EShopSolution.Utilities.Tokens;
+using EShopSolution.ViewModels.System.UserValidator;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -107,7 +109,8 @@ namespace EShopSolution.Api
             services.AddTransient<IUserService, UserService>();
             services.AddScoped<JwtAuthentication>();
 
-            services.AddControllers();
+            services.AddControllers().AddFluentValidation(fv=>fv.RegisterValidatorsFromAssemblyContaining<LoginValidator>());
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "EShopSolution.Api", Version = "v1" });
