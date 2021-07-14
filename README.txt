@@ -25,5 +25,7 @@ B3- Login Register
 Different between AddIdentity and AddIdentityCore
 https://stackoverflow.com/questions/55361533/addidentity-vs-addidentitycore
 
+B4- FluentValidation 
+https://fluentvalidation.net/aspnet
 
 
