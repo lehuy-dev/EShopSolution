@@ -1,4 +1,5 @@
 ﻿using EShopSolution.AdminApp.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace EShopSolution.AdminApp.Controllers
 {
+   [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -20,6 +22,7 @@ namespace EShopSolution.AdminApp.Controllers
 
         public IActionResult Index()
         {
+           
             return View();
         }
 
