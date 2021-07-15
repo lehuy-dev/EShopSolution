@@ -85,8 +85,8 @@ namespace EShopSolution.Api
                     ValidateIssuerSigningKey = true,
                     RequireExpirationTime = false,
                     ValidateLifetime = true,
-                    ClockSkew = TimeSpan.Zero,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(jwtTokenConfig.Secret))
+                    //ClockSkew = TimeSpan.Zero,
+                    //IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(jwtTokenConfig.Secret))
                 };
             });
 
