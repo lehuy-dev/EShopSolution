@@ -6,7 +6,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="10.3.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.7" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EShopSolution.Api\EShopSolution.Api.csproj" />
+    <ProjectReference Include="..\EShopSolution.Application\EShopSolution.Application.csproj" />
+    <ProjectReference Include="..\EShopSolution.Data\EShopSolution.Data.csproj" />
+    <ProjectReference Include="..\EShopSolution.Utilities\EShopSolution.Utilities.csproj" />
+    <ProjectReference Include="..\EShopSolution.ViewModels\EShopSolution.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>
