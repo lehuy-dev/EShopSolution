@@ -21,14 +21,14 @@ namespace EShopSolution.Api.Controllers
             _userService = userService;
         }
         [HttpPost("/login")]
-        public async Task<IActionResult> Authenticate([FromForm] LoginRequest request)
+        public async Task<IActionResult> Authenticate([FromBody] LoginRequest request)
         {
             var token = await _userService.Authencate(request);
             if (string.IsNullOrEmpty(token.ResultObj))
             {
                 return BadRequest("UserName and PassWord iscorrect");
             }
-            return Ok(new { token = token.ResultObj });
+            return Ok(token.ResultObj);
         }
         [HttpPost("/register")]
         public async Task<IActionResult> Register([FromForm]RegisterRequest request)
